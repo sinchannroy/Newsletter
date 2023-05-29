@@ -9,7 +9,7 @@ app.use (express.static ("public"));
 
 
 app.get ("/" , function (req , response) {
-    response.sendFile (__dirname + "/signup.html");
+    response.sendFile (__dirname + "/public/signup.html");
 });
 
 app.post ("/" , function (req , res) {
@@ -42,11 +42,11 @@ app.post ("/" , function (req , res) {
 
     const request = https.request (url, options, function (response) {
         if (response.statusCode === 404) {
-            res.sendFile (__dirname + "/failure.html");
+            res.sendFile (__dirname + "/public/failure.html");
         }
 
         else {
-            res.sendFile (__dirname + "/success.html");
+            res.sendFile (__dirname + "/public/success.html");
         }
 
         
